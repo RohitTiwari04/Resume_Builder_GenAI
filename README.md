@@ -2,6 +2,7 @@
 
 An immersive, full-stack web application that leverages Google's Generative AI (Gemini) to analyze candidates' PDF resumes against specific Job Descriptions. It provides a real-time preparation score, structured technical and behavioral interview questionnaires, a tailored day-by-day preparation roadmap, and downloads high-fidelity dynamically generated resume PDFs.
 
+
 ---
 
 ## 🎯 The Core Idea
