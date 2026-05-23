@@ -31,7 +31,8 @@ export const useAuth = () => {
                 return false
             }
         } catch (err) {
-            window.alert("Login failed. Please try again.")
+            const msg = err.response?.data?.message || err.message || "Login failed. Please try again."
+            window.alert(msg)
             return false
         } finally {
             setLoading(false)
@@ -57,7 +58,7 @@ export const useAuth = () => {
                 return { success: false }
             }
         } catch (err) {
-            const msg = err.response?.data?.message || "Registration failed. Please try again."
+            const msg = err.response?.data?.message || err.message || "Registration failed. Please try again."
             window.alert(msg)
             return { success: false }
         } finally {
