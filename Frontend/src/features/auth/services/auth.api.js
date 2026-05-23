@@ -1,8 +1,11 @@
 import axios from "axios"
 
 
+const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+const defaultBackendUrl = isLocalhost ? "http://localhost:3000" : "https://resume-builder-backend-iy7w.onrender.com";
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000",
+    baseURL: import.meta.env.VITE_API_URL || defaultBackendUrl,
     withCredentials: true
 })
 
