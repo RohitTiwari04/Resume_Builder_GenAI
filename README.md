@@ -171,5 +171,5 @@ During development and deployment, we tackled several high-level engineering hur
 ---
 
 ## 👥 Authors & License
-* Developed by **Rohit Tiwari** and pair-programmed with **Antigravity AI**.
+* Developed by **Rohit Tiwari**.
 * Licensed under the ISC License.
