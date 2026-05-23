@@ -1,0 +1,326 @@
+main{
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-container{
+        min-width: 380px;
+        background: rgba(30, 30, 30, 0.6);
+        padding: 2.5rem;
+        border-radius: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        button.primary-button {
+            margin-top: 0.5rem;
+            padding-block: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+
+            &.disabled, &:disabled {
+                opacity: 0.45;
+                cursor: not-allowed;
+                background-color: #555555 !important;
+                border-color: #555555 !important;
+                transform: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #b3b3b3;
+            letter-spacing: 0.5px;
+        }
+
+        input{
+            border: 2px solid transparent;
+            outline: none;
+            padding-inline: 1rem;
+            padding-block: 0.75rem;
+            border-radius: 0.75rem;
+            background-color: #262626;
+            color: #ffffff;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:focus {
+                border-color: #e1034d;
+                box-shadow: 0 0 0 3px rgba(225, 3, 77, 0.15);
+                background-color: #2d2d2d;
+            }
+
+            &.invalid {
+                border-color: #ff4d4d !important;
+                box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15) !important;
+                background-color: rgba(255, 77, 77, 0.05);
+
+                &:focus {
+                    background-color: rgba(255, 77, 77, 0.08);
+                }
+            }
+
+            &.valid {
+                border-color: #2ecc71 !important;
+                box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15) !important;
+                background-color: rgba(46, 204, 113, 0.05);
+
+                &:focus {
+                    background-color: rgba(46, 204, 113, 0.08);
+                }
+            }
+        }
+
+        .validation-message {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            animation: slideDown 0.25s ease forwards;
+
+            &.error-message {
+                color: #ff4d4d;
+            }
+
+            &.success-message {
+                color: #2ecc71;
+            }
+        }
+    }
+
+    a{
+        color: #e1034d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #ff2d75;
+            text-decoration: underline;
+        }
+    }
+
+    p {
+        color: #8c8c8c;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    /* ========================================================
+       Gmail OTP Verification Card Styling
+       ======================================================== */
+    .otp-card {
+        animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .otp-header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        .otp-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(225, 3, 77, 0.1);
+            border: 1px solid rgba(225, 3, 77, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        .otp-icon {
+            font-size: 1.5rem;
+            color: #e1034d;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        p {
+            color: #b3b3b3;
+            margin-top: 0.25rem;
+        }
+
+        .highlight-email {
+            color: #e1034d;
+            font-size: 0.95rem;
+            font-family: monospace;
+            background: rgba(225, 3, 77, 0.08);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid rgba(225, 3, 77, 0.15);
+        }
+    }
+
+    .dev-hud-bubble {
+        margin-block: 0.5rem;
+        background: rgba(103, 58, 183, 0.08);
+        border: 1px dashed rgba(103, 58, 183, 0.4);
+        padding: 1rem;
+        border-radius: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.25rem;
+        box-shadow: 0 0 16px rgba(103, 58, 183, 0.05);
+
+        .dev-hud-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #b388ff;
+        }
+
+        .dev-hud-code {
+            font-size: 1.1rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+
+            strong {
+                color: #2ecc71;
+                font-family: 'Courier New', Courier, monospace;
+                background: rgba(46, 204, 113, 0.1);
+                padding: 0.1rem 0.4rem;
+                border-radius: 0.25rem;
+                border: 1px solid rgba(46, 204, 113, 0.2);
+                margin-left: 0.25rem;
+            }
+        }
+
+        .dev-hud-info {
+            font-size: 0.75rem;
+            color: #8c8c8c;
+            font-style: italic;
+        }
+    }
+
+    .otp-input-field {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem !important;
+        font-weight: 700;
+        letter-spacing: 8px;
+        padding-inline-start: 1.5rem !important; /* compensate letter spacing offset */
+        background-color: #1e1e1e !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+
+        &:focus {
+            border-color: #e1034d !important;
+            box-shadow: 0 0 0 3px rgba(225, 3, 77, 0.15) !important;
+        }
+    }
+
+    .otp-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+
+        .resend-countdown-text {
+            color: #8c8c8c;
+            font-size: 0.85rem;
+            margin: 0;
+
+            strong {
+                color: #e1034d;
+            }
+        }
+
+        .text-action-link {
+            background: none;
+            border: none;
+            color: #e1034d;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: #ff2d75;
+                text-decoration: underline;
+            }
+        }
+
+        .back-link-btn {
+            background: none;
+            border: none;
+            color: #8c8c8c;
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 0.25rem;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #ffffff;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(225, 3, 77, 0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(225, 3, 77, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(225, 3, 77, 0);
+    }
+}
